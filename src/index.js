@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
+import { createRef } from 'react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App contextRef={createRef()} />
   </React.StrictMode>,
   document.getElementById('root')
 );

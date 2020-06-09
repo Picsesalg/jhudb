@@ -9,16 +9,13 @@ import Schedule from './sections/Schedule';
 import Contact from './sections/Contact';
 
 class App extends Component {
-  constructor() {
-    super();
-    var contextRef = createRef();
-  }
+  contextRef = createRef();
 
   render() {
     return (
-      <div>
+      <div ref={this.contextRef}>
         <Sticky context={this.contextRef}>
-          <Navbar />
+          <Navbar style/>
         </Sticky>
         <Home />
         <About />
@@ -38,6 +35,7 @@ class App extends Component {
             </a>
           </div>
         </footer>
+
         {/* </body> */}
         {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
         <script src="/__/firebase/7.15.0/firebase-app.js"></script>

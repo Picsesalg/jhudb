@@ -5,12 +5,19 @@ import dc from '../images/dc2019.jpg';
 import zunyi from '../images/zunyi2019.JPG';
 
 export default function Competitions() {
+    let h4_style = {
+        'paddingLeft': '20vmin', 
+        'paddingRight': '20vmin',
+        'paddingBottom': '30px', 
+        'fontWeight': 'normal',
+    };
+
     return (
         <section id='competitions'>
             <Header as='h1' textAlign='center'>
                 <Header.Content>Competitions</Header.Content>
             </Header>
-            <h3 className='not-bold' style={{'paddingLeft': '10vmin', 'paddingRight': '10vmin', 'paddingBottom': '30px'}}>
+            <h4 style={h4_style}>
                 Each academic year, JHU Dragon Boat attends 2 races 
                 in the areas surrounding Baltimore. The first of which 
                 is held in the Fall semester in Philadelphia, and the second
@@ -20,7 +27,7 @@ export default function Competitions() {
                 Boat has also participated in an international
                 competition held in China, hosted by the International Collegiate
                 Dragon Boat Federation.
-            </h3>
+            </h4>
             <Grid columns='equal' divided>
                 <Grid.Row>
                     <Grid.Column>

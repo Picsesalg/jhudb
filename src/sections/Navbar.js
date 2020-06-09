@@ -23,7 +23,7 @@ class Navbar extends Component {
         };
 
         return (
-            <Menu inverted size='large'>
+            <Menu inverted size='large' attached>
                 <a href='#home'>
                     <Menu.Item
                         name={strings.jhudb}
