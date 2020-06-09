@@ -1,7 +1,7 @@
 import React, { createRef, Component } from 'react';
 import './App.css';
 import Navbar from './sections/Navbar';
-import { Sticky } from 'semantic-ui-react';
+import { Sticky, Icon } from 'semantic-ui-react';
 import Home from './sections/Home';
 import About from './sections/About';
 import Competitions from './sections/Competitions';
@@ -28,21 +28,14 @@ class App extends Component {
 
         {/* <!-- Footer --> */}
         <footer class="text-center">
-          <div class="container">
-            <ul class="list-inline">
-              <li>
-                <a href="#"><i class="fa fa-facebook circle-icon" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-google-plus circle-icon" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter circle-icon" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin circle-icon" aria-hidden="true"></i></a>
-              </li>
-            </ul>
+          <div class="container" style={{'color': 'white'}}>
+            Created and designed by Alice Yang. <br />
+            <a href='https://www.linkedin.com/in/alice-yang-7673b5130/' target='_blank'>
+              <Icon name='linkedin' color='blue' size='large' />
+            </a>
+            <a href='https://github.com/Picsesalg' target='_blank'>
+              <Icon name='github' color='grey' size='large' />
+            </a>
           </div>
         </footer>
         {/* </body> */}

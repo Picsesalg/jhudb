@@ -7,7 +7,7 @@ export default function Schedule() {
             <Header as='h1' textAlign='center'>
                 <Header.Content>Schedule</Header.Content>
             </Header>
-            <h3 className='not-bold center'>
+            <h3 className='not-bold center' style={{'paddingLeft': '10vmin', 'paddingRight': '10vmin'}}>
                 Practices are held in conjunction with 
                 the <a href='https://www.baltimoredragonboatclub.com/' target="_blank">
                      Baltimore Dragon Boat Club
@@ -15,7 +15,7 @@ export default function Schedule() {
                 and from the Inner Harbor for free for members, and our members also qualify
                 for free membership with the Baltimore Dragon Boat Club.
             </h3>
-            <h3 className='not-bold center'>
+            <h3 className='not-bold center' style={{'paddingLeft': '10vmin', 'paddingRight': '10vmin'}}>
                 If interested members are unable to make the times decided
                 by the JHU Dragon Boat Club, we strongly recommend participating
                 in one or more of the practices run by BDBC. For more information on their
@@ -24,7 +24,7 @@ export default function Schedule() {
                      here
                 </a>.
             </h3>
-            <h3 className='center'>
+            <h3 className='center' style={{'paddingLeft': '10vmin', 'paddingRight': '10vmin'}}>
                 Practice times for FALL 2020 are to be decided.
             </h3>
         </section>

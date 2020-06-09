@@ -1,36 +1,80 @@
 import React, { Component } from 'react';
-import { Header, Grid, Form, Input, TextArea, Button } from 'semantic-ui-react';
+import { Header, Grid, Form, TextArea, Button, Icon } from 'semantic-ui-react';
 
 class Contact extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            message: ''
+        };
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const templateId = 'template_7s8RGjg4';
+
+        this.sendFeedback(templateId, 
+            {message_html: this.state.message, 
+                from_name: this.state.name, 
+                reply_to: this.state.email})
+    }
+
+    sendFeedback (templateId, variables) {
+        window.emailjs.send(
+          'alicegmail', templateId,
+          variables
+          ).then(res => {
+            alert('Your message has been sent successfully');
+            window.location.reload();
+          })
+          // Handle errors here however you like, or use a React error boundary
+          .catch(err => alert('Oh well, you failed. Here some thoughts on the error that occured:', err));
+      }
+
+    handleChange = (e, { name, value }) => {
+        this.setState({ [name]: value });
+    }
+
     render() {
+        let name, email, message;
         return (
             <section id='contact'>
-                <Header as='h1' textAlign='center'>
+                <Header as='h1' textAlign='center' style={{'paddingBottom': '30px'}}>
                     <Header.Content>Contact Us</Header.Content>
                 </Header>
-                <Grid columns='equal'>
+                <Grid columns='equal' divided>
                     <Grid.Column>
                         <h3 className='center'>
                             Send us an Email!
                         </h3>
-                        <Form>
-                            <Form.Field
-                                id='form-input-control-name'
-                                control={Input}
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Input
                                 label='Name'
+                                name='name'
                                 placeholder='Name'
+                                value={name}
+                                onChange={this.handleChange}
+                                required
                             />
-                            <Form.Field
-                                id='form-input-control-error-email'
-                                control={Input}
+                            <Form.Input
                                 label='Email'
+                                name='email'
                                 placeholder='jsmith1@jhu.edu'
+                                value={email}
+                                onChange={this.handleChange}
+                                required
                             />
-                            <Form.Field
-                                 id='form-textarea-control-opinion'
-                                 control={TextArea}
-                                 label='Message'
-                                 placeholder='Type your message to us here...'
+                            <Form.Input
+                                control={TextArea}
+                                label='Message'
+                                name='message'
+                                placeholder='Type your message to us here...'
+                                value={message}
+                                onChange={this.handleChange}
+                                required
                             />
                             <Form.Field
                                 id='form-button-control-public'
@@ -38,6 +82,33 @@ class Contact extends Component {
                                 content='Send'
                             />
                         </Form>
+                    </Grid.Column>
+                    <Grid.Column textAlign='center'>
+                        <h3 className='center'>
+                            Or follow us on Social Media!
+                        </h3>
+                        <div style={{'paddingTop': '50px'}}>
+                        <div>
+                            <a href='https://www.facebook.com/JHUDragonBoat/' target='_blank' style={{'color': 'black'}}>
+                                <Icon name='facebook' size='big' color='blue' />
+                                @JHUDragonBoat
+                            </a>
+                        </div>
+                        <br />
+                        <div>
+                            <a href='https://www.instagram.com/jhudragonboat/' target='_blank' style={{'color': 'black'}}>
+                                <Icon name='instagram' size='big' color='pink' />
+                                @jhudragonboat
+                            </a>
+                        </div>
+                        <br />
+                        <div>
+                            <a href='https://www.youtube.com/channel/UCl49mpgrkBll2pvQPBDHRZQ' target='_blank' style={{'color': 'black'}}>
+                                <Icon name='youtube' size='big' color='red' />
+                                JHU Dragon Boat Club
+                            </a>
+                        </div>
+                        </div>
                     </Grid.Column>
                 </Grid>
             </section>

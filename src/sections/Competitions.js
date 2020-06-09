@@ -10,7 +10,7 @@ export default function Competitions() {
             <Header as='h1' textAlign='center'>
                 <Header.Content>Competitions</Header.Content>
             </Header>
-            <h3 className='not-bold'>
+            <h3 className='not-bold' style={{'paddingLeft': '10vmin', 'paddingRight': '10vmin', 'paddingBottom': '30px'}}>
                 Each academic year, JHU Dragon Boat attends 2 races 
                 in the areas surrounding Baltimore. The first of which 
                 is held in the Fall semester in Philadelphia, and the second
